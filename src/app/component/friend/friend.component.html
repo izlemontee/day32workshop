@@ -1,0 +1,32 @@
+<h2>Friend</h2>
+
+<form [formGroup]="friendForm" (submit)="processForm()">
+    <table >
+        <tr>
+            <td>Name</td>
+            <td><input type="text" formControlName="name" [value]="friend.name" ></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" formControlName="email" [value]="friend.email"></td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td><input type="text" formControlName="phone" [value]="friend.phone"></td>
+        </tr>
+        <tr>
+            <td>DOB</td>
+            <td><input type="date" formControlName="DOB" [value]="friend.DOB"></td>
+        </tr>
+        <tr>
+            <td>Friend</td>
+            <td><input type="checkbox" formControlName="isFriend" [value]="friend.isFriend"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" [disabled]="friendForm.invalid">Add</button>
+                <button type="submit" [disabled]="friendForm.invalid" (click)="update()">Update</button>
+            </td>
+        </tr>
+    </table>
+</form>

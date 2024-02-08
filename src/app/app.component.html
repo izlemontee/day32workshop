@@ -1,0 +1,14 @@
+<app-friend (friendSend)="addFriend($event)" [friend]="friend" (friendUpdate)="updateFriendInList($event)"></app-friend>
+
+<div *ngIf="friends.length>0 else noFriends">
+  <p>Your friends</p>
+  <ul>
+    <li *ngFor="let f of friends; let i=index">
+      <p (click)="updateFriend(i)">{{ f.name }}</p>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noFriends>
+ <p>You have no friends :( time to touch grass</p>
+</ng-template>
